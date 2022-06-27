@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+</head>
+
+<body>
+
+    <!-- <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>Charting with D3.js</h2>
+            </div>
+            <div id="my-status" style="float: right">
+                <b><span id="filter-count"></span></b>
+                selected out of
+                <b><span id="total-count"></span></b> |
+                <a id="reset-all" href="#">Reset All</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="file" name="dataset-file" id="dataset-file" multiple>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <svg id="geo-chart" width="300" height="400"></svg>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="pie-component" class="panel panel-default">
+                            <div class="panel-heading">
+                                <div style="float: right">
+                                    <a id="pie-reset" href="#pie-component">reset</a>
+                                </div>
+                                <h3 class="panel-title pie">Pie Chart</h3>
+                            </div>
+                            <div class="panel-content text-center">
+                                <svg id="pie-chart" class="chart"></svg>
+                            </div>
+                            <div class="panel-footer pie">A simple Pie Chart with basic settings</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="bar-component" class="panel panel-default">
+                            <div class="panel-heading">
+                                <div style="float: right">
+                                    <a id="bar-reset" href="#bar-component">reset</a>
+                                </div>
+                                <h3 class="panel-title bar">Bar Chart</h3>
+                            </div>
+                            <div id="bar-container" class="panel-content text-center">
+                                <svg id="bar-chart" class="chart"></svg>
+                            </div>
+                            <div class="panel-footer bar">A simple Bar Chart with basic settings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <row>
+            <div class="col-sm-12">
+                <div id="area-component" class="panel panel-default">
+                    <div class="panel-heading">
+                        <div style="float: right">
+                            <a id="area-reset" href="#area-component">reset</a>
+                        </div>
+                        <h3 class="panel-title area">Area Chart</h3>
+                    </div>
+                    <div id="area" class="panel-content text-center">
+                        <svg id="area-chart" class="chart" width="1200" height="300"></svg>
+                    </div>
+                    <div class="panel-content text-center">
+                        <svg id="area-chart-focus" class="chart" width="1200" height="100"></svg>
+                    </div>
+                    <div class="panel-footer line">A simple Line Chart with basic settings</div>
+                </div>
+            </div>
+        </row>
+
+    </div> -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h4>Charting with D3.js</h4>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="file" name="dataset-file" id="dataset-file" multiple>
+                        <div id="my-status" style="float: right">
+                            <b><span id="filter-count"></span></b>
+                            selected out of
+                            <b><span id="total-count"></span></b> |
+                            <a id="reset-all" href="#">Reset All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5 id="geo-title" class="panel-title"></h5>
+                        <svg id="geo-chart" width="300" height="400"></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="pie-component" class="panel panel-default">
+                            <div class="panel-heading">
+                                <div style="float: right">
+                                    <a id="pie-reset" href="#pie-component">reset</a>
+                                </div>
+                                <h5 id="pie-title" class="panel-title pie"></h5>
+                            </div>
+                            <div class="panel-content text-center">
+                                <svg id="pie-chart" class="chart"></svg>
+                            </div>
+                            <!-- <div class="panel-footer pie">A simple Pie Chart with basic settings</div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="bar-component" class="panel panel-default">
+                            <div class="panel-heading">
+                                <div style="float: right">
+                                    <a id="bar-reset" href="#bar-component">reset</a>
+                                </div>
+                                <h5 id="bar-title" class="panel-title bar"></h5>
+                            </div>
+                            <div id="bar-container" class="panel-content text-center">
+                                <svg id="bar-chart" class="chart"></svg>
+                            </div>
+                            <!-- <div class="panel-footer bar">A simple Bar Chart with basic settings</div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="area-component" class="panel panel-default">
+                            <div class="panel-heading">
+                                <div style="float: right">
+                                    <a id="area-reset" href="#area-component">reset</a>
+                                </div>
+                                <h5 id="area-title" class="panel-title area"></h5>
+                            </div>
+                            <div id="area" class="panel-content text-center">
+                                <svg id="area-chart" class="chart" width="1200" height="300"></svg>
+                            </div>
+                            <div class="panel-content text-center">
+                                <svg id="area-chart-focus" class="chart" width="1200" height="100"></svg>
+                            </div>
+                            <!-- <div class="panel-footer line">A simple Line Chart with basic settings</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
